@@ -8,6 +8,6 @@ import mx.edu.itlapiedad.models.Producto;
 public interface ProductoService {
 
 	Producto insertarProductos(Producto productos);
-
 	List<Producto> consultarProductos();
+	Producto buscar(int id);
 }

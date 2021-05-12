@@ -25,5 +25,10 @@ public class ProductoLogic implements ProductoService {
 	public List<Producto> consultarProductos() {
 		return repositorio.consultarProductos();
 	}
+	@Override
+	public Producto buscar(int id) {
+		return repositorio.buscar(id);
+	}
+	
 }
 
