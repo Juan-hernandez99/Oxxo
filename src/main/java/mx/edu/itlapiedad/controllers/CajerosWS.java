@@ -55,7 +55,7 @@ public class CajerosWS {
 		return new ResponseEntity<Cajeros>(resultado,HttpStatus.OK);
 	}
 
-	@PostMapping("/insertar")
+	@PostMapping("/Cajeros/insertar")
 	public ResponseEntity<?>insertarCajeros(@RequestBody Cajeros cajeros){
 		Cajeros resultado=null;
 		try {
@@ -68,7 +68,7 @@ public class CajerosWS {
 		return new ResponseEntity<Cajeros>(resultado,HttpStatus.CREATED);
 
 	}
-	@PutMapping("/actualizar")
+	@PutMapping("Cajeros/actualizar")
 	public ResponseEntity<?>actualizarCajeros(@RequestBody Cajeros cajeros){
 		try {
 			servicio.actualizarCajeros(cajeros);
@@ -81,7 +81,7 @@ public class CajerosWS {
 
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
-	@DeleteMapping("/eliminar/{id}")
+	@DeleteMapping("Cajeros/eliminar/{id}")
 	public ResponseEntity<?>eliminarCajeros(@PathVariable int id){
 
 		try {

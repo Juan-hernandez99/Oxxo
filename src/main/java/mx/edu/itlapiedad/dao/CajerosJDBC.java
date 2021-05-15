@@ -75,7 +75,7 @@ public class CajerosJDBC implements CajerosDAO {
 
 	@Override
 	public Cajeros buscarID(int id) {
-		String sql_query = "SELECT * FROM cajeros WHERE id = ?";
+		String sql_query = "SELECT * FROM cajeros WHERE id = ? and activo=1";
 		return conexion.queryForObject(sql_query, new RowMapper<Cajeros>() {
 			public Cajeros mapRow(ResultSet rs, int rowNum) throws SQLException{
 				Cajeros cajero = new Cajeros();
