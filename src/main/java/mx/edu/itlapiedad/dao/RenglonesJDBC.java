@@ -31,6 +31,7 @@ public class RenglonesJDBC implements RenglonesDAO {
 				Renglones renglones = new Renglones();
 				renglones.setId(rs.getInt("id"));
 				renglones.setCantidad(rs.getInt("cantidad"));
+				renglones.setActivo(rs.getInt("activo"));
 				renglones.setPrecio(rs.getFloat("precio"));
 				renglones.setImporte(rs.getFloat("importe"));
 				renglones.setTICKET_id(rs.getInt("TICKET_id"));;
@@ -56,6 +57,7 @@ public class RenglonesJDBC implements RenglonesDAO {
 					
 					renglon.setId(rs.getInt("id"));
 					renglon.setCantidad(rs.getInt("cantidad"));
+					renglon.setActivo(rs.getInt("activo"));
 					renglon.setPrecio(rs.getFloat("precio"));
 					renglon.setImporte(rs.getFloat("importe"));
 					renglon.setTICKET_id(rs.getInt("TICKET_id"));
