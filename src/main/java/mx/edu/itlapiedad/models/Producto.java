@@ -1,7 +1,13 @@
 package mx.edu.itlapiedad.models;
 
 public class Producto {
-	private int id;
+	private int id,activo;
+	public int getActivo() {
+		return activo;
+	}
+	public void setActivo(int activo) {
+		this.activo = activo;
+	}
 	private String descripcion;
 	private float precio;
 	private String codigo_barras;

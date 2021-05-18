@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -65,6 +67,24 @@ public class ProductosWS {
 	}
 
 
-	
+	@PutMapping("/productos/actualizar")
+	public ResponseEntity<?> actualizar(@RequestBody Producto producto){
+		try {
+			servicio.actualizar(producto);
+		} catch(DataAccessException e){
+			return new ResponseEntity<> (HttpStatus.CONFLICT);
+		}
+			return new ResponseEntity<>(HttpStatus.CREATED);
+	}
+
+	@DeleteMapping("/productos/eliminar/{id}")
+	public ResponseEntity<?> eliminar(@PathVariable int id){
+		try {
+			servicio.eliminar(id);
+		} catch (DataAccessException e) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+			return new ResponseEntity<Producto>(HttpStatus.OK);
+	}
 
 }

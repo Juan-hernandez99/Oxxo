@@ -8,4 +8,6 @@ public interface ProductoDAO {
 	public Producto insertarProductos(Producto productos);
 	public List<Producto>consultarProductos();
 	public Producto buscar(int id);
+	public void actualizar(Producto producto);
+	public void eliminar(int id);
 }
