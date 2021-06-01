@@ -23,7 +23,7 @@ import mx.edu.itlapiedad.services.ProductoService;
 
 
 @RestController
-@RequestMapping("/oxxo")
+@RequestMapping("/oxxoAPI")
 public class ProductosWS {
 
 	@Autowired
