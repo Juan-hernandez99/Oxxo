@@ -26,5 +26,5 @@ jobs:
     - name: subir.jar
       uses: actions/upload-artifact@v1
       with:
-        name: src
+        name: oxxo
         path: target/oxxo-0.0.1.jar
