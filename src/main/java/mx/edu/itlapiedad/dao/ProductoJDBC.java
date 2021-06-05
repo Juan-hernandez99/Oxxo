@@ -51,6 +51,7 @@ public class ProductoJDBC implements ProductoDAO{
 				producto.setPrecio(rs.getFloat("precio"));
 				producto.setCodigo_barras(rs.getString("codigo_barras"));
 				producto.setExistencia(rs.getInt("existencia"));
+				producto.setActivo(rs.getInt("activo"));
 				return producto;
 			}
 			
@@ -68,6 +69,7 @@ public class ProductoJDBC implements ProductoDAO{
 				producto.setPrecio(rs.getFloat("precio"));
 				producto.setCodigo_barras(rs.getString("codigo_barras"));
 				producto.setExistencia(rs.getInt("existencia"));
+				producto.setActivo(rs.getInt("activo"));
 				return producto;
 			}
 		}, id);

@@ -15,6 +15,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import mx.edu.itlapiedad.models.Cajeros;
+import mx.edu.itlapiedad.models.Totales;
 @Repository
 public class CajerosJDBC implements CajerosDAO {
 
@@ -85,6 +86,26 @@ public class CajerosJDBC implements CajerosDAO {
 				return cajero;
 			}
 		}, id);
+	}
+
+	@Override
+	public List<Totales> consultarTotalCajeros(int id) {
+		String sql_query = "SELECT c.id, c.nombre, total FROM tickets t JOIN cajeros c ON c.id=t.CAJERO_id WHERE c.id= ?";
+		return conexion.query(sql_query, new RowMapper<Totales>() {
+
+			@Override
+			public Totales mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Totales tot=new Totales();
+				tot.setId(rs.getInt("id"));
+				tot.setNombre(rs.getString("nombre"));
+				tot.setTotal(rs.getFloat("total"));
+				return tot;
+			}
+
+
+		},id);
+
+	
 	}
 
 }

@@ -3,6 +3,7 @@ package mx.edu.itlapiedad.dao;
 import java.util.List;
 
 import mx.edu.itlapiedad.models.Cajeros;
+import mx.edu.itlapiedad.models.Totales;
 
 public interface CajerosDAO {
 
@@ -15,5 +16,7 @@ public interface CajerosDAO {
 	void eliminarCajeros(int id);
 
 	Cajeros buscarID(int id);
+
+	List<Totales> consultarTotalCajeros(int id);
 
 }
