@@ -23,7 +23,7 @@ import mx.edu.itlapiedad.services.ProductoService;
 
 
 @RestController
-@RequestMapping("/oxxo")
+@RequestMapping("/oxxoAPI")
 public class ProductosWS {
 
 	@Autowired
@@ -33,10 +33,11 @@ public class ProductosWS {
 
 	@PostMapping("/productos/insertar")
 	public ResponseEntity<?>insertarProductos(@RequestBody Producto productos){
-		Producto resultado=null;
+		Producto resultado = null;
 		try {
 			resultado=servicio.insertarProductos(productos);
 		}catch(DataAccessException e) {
+			
 			return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}
 		
