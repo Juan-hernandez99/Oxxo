@@ -76,6 +76,7 @@ public class TicketsWS {
 			try {
 				servicio.eliminarTickets(id);
 			}catch(DataAccessException e) {
+				System.out.println(e);
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
 			}

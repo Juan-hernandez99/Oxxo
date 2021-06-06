@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import mx.edu.itlapiedad.models.Cajeros;
-import mx.edu.itlapiedad.models.Totales;
 import mx.edu.itlapiedad.services.CajerosService;
 
 @RestController
@@ -97,18 +96,4 @@ public class CajerosWS {
 
 	}
 	
-	@GetMapping("/Cajeros/consultarTotal/{id}")
-	public ResponseEntity<?> consultarTotalCajeros(@PathVariable int id) {
-		List<Totales>resultado;
-		try {
-			resultado= servicio.consultarTotalCajeros(id);
-		}catch(DataAccessException e) {
-			System.out.print(e);
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		}
-		return new ResponseEntity<List<Totales>>(resultado, HttpStatus.OK);
-
-	
-	}
-
 }

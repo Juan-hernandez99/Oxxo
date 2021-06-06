@@ -61,6 +61,7 @@ public class RenglonesWS {
 			resultado = servicio.insertarRenglones(renglones);
 			
 		}catch(DataAccessException e) {
+			System.out.print(e);
 			return new ResponseEntity<>(HttpStatus.CONFLICT);
 		}
 		

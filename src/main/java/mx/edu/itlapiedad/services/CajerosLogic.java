@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import mx.edu.itlapiedad.dao.CajerosDAO;
 import mx.edu.itlapiedad.models.Cajeros;
-import mx.edu.itlapiedad.models.Totales;
 @Service
 public class CajerosLogic implements CajerosService {
 
@@ -44,12 +43,6 @@ public class CajerosLogic implements CajerosService {
 		
 		
 		return repositorio.buscarID(id);
-	}
-
-	@Override
-	public List<Totales> consultarTotalCajeros(int id) {
-		// TODO Auto-generated method stub
-		return repositorio.consultarTotalCajeros(id);
 	}
 
 }
