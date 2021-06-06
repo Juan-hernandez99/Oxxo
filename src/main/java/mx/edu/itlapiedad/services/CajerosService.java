@@ -17,6 +17,6 @@ public interface CajerosService {
 
 	Cajeros buscarID(int id);
 
-	List<Totales> consultarTotalCajeros(int id);
+	List<Totales> consultarTotalCajeros(int id,String fecha_inicial,String fecha_final);
 
 }

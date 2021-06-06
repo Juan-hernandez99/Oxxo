@@ -47,9 +47,9 @@ public class CajerosLogic implements CajerosService {
 	}
 
 	@Override
-	public List<Totales> consultarTotalCajeros(int id) {
+	public List<Totales> consultarTotalCajeros(int id,String fecha_inicial,String fecha_final) {
 		// TODO Auto-generated method stub
-		return repositorio.consultarTotalCajeros(id);
+		return repositorio.consultarTotalCajeros(id,fecha_inicial,fecha_final);
 	}
 
 }

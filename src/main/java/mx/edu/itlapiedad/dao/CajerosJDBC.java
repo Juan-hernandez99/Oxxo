@@ -91,8 +91,8 @@ public class CajerosJDBC implements CajerosDAO {
 
 
 	@Override
-	public List<Totales> consultarTotalCajeros(int id) {
-		String sql_query = "SELECT c.id, c.nombre, SUM(total) AS Total FROM tickets t JOIN cajeros c ON c.id=t.CAJERO_id WHERE c.id= ? and  t.fecha_hora between '2020-10-14 00:00:00'  AND '2020-10-14 23:59:59'";
+	public List<Totales> consultarTotalCajeros(int id,String fecha_inicial, String fecha_final) {
+		String sql_query = "Select c.id, c.nombre, sum(total) as Total from tickets t join cajeros c on c.id=t.CAJERO_id where c.id=2 and t.fecha_hora  between ?  AND ?";
 		return conexion.query(sql_query, new RowMapper<Totales>() {
 
 			@Override
@@ -105,7 +105,7 @@ public class CajerosJDBC implements CajerosDAO {
 			}
 
 
-		},id);
+		},id,fecha_inicial,fecha_final);
 
 	
 	}

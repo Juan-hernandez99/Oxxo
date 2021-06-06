@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -98,17 +99,17 @@ public class CajerosWS {
 	}
 	
 	@GetMapping("/Cajeros/consultarTotal/{id}")
-	public ResponseEntity<?> consultarTotalCajeros(@PathVariable int id) {
+	public ResponseEntity<?> consultarTotalCajeros(@PathVariable int id,@RequestParam String fecha_inicial , String fecha_final ) {
 		List<Totales>resultado;
 		try {
-			resultado= servicio.consultarTotalCajeros(id);
+			resultado= servicio.consultarTotalCajeros(id,fecha_inicial,fecha_final);
 		}catch(DataAccessException e) {
 			System.out.print(e);
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<Totales>>(resultado, HttpStatus.OK);
 
-
-	}
 	
+	}
+
 }
