@@ -19,4 +19,6 @@ public interface CajerosDAO {
 
 	List<Totales> consultarTotalCajeros(int id,String fecha_inicial,String fecha_final);
 
+	
+
 }

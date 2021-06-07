@@ -99,7 +99,7 @@ public class CajerosWS {
 	}
 	
 	@GetMapping("/Cajeros/consultarTotal/{id}")
-	public ResponseEntity<?> consultarTotalCajeros(@PathVariable int id,@RequestParam String fecha_inicial , String fecha_final ) {
+	public ResponseEntity<?> consultarTotalCajeros(@PathVariable int id,@RequestParam String fecha_inicial , @RequestParam String fecha_final ) {
 		List<Totales>resultado;
 		try {
 			resultado= servicio.consultarTotalCajeros(id,fecha_inicial,fecha_final);
